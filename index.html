@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Halloween, Bharwa!</title>
+    <style>
+        /* Background Image and Styling */
+        body {
+            background-image: url(https://static.vecteezy.com/system/resources/previews/032/973/548/non_2x/scary-halloween-pumpkin-clipart-ai-generative-free-png.png); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ff6600;
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff6600;
+            text-shadow: 0 0 10px #ff3300, 0 0 20px #ff3300;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .mystery-button {
+            background-color: #ff3300;
+            color: #fff;
+            font-size: 1.1em;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .mystery-button:hover {
+            background-color: #cc2900;
+        }
+
+        .surprise-message {
+            display: none;
+            font-size: 1.3em;
+            margin-top: 20px;
+            color: #ff6600;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1a1a1a;
+            border: 3px solid #ff3300;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            display: none;
+        }
+
+        .close-btn {
+            background-color: #cc2900;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Halloween, Bharwa!</h1>
+    <p>Welcome to your spooky surprise! Dare to click the mysterious buttons below and reveal the hidden tricks and treats...</p>
+    
+    <!-- Mysterious Buttons -->
+    <button class="mystery-button" onclick="showMessage(0)">🎃 Trick or Treat 🎃</button>
+    <button class="mystery-button" onclick="showMessage(1)">🕸️ Spooky Surprise 🕸️</button>
+    <button class="mystery-button" onclick="showMessage(2)">👻 Boo! 👻</button>
+    <button class="mystery-button" onclick="showPopup()">💀 The Haunted Message 💀</button>
+
+    <!-- Surprise Messages -->
+    <p id="message0" class="surprise-message">You found a treat! Look behind you... just kidding! 😱</p>
+    <p id="message1" class="surprise-message">Did you hear that? Oh wait... it’s just you clicking the buttons! 👀</p>
+    <p id="message2" class="surprise-message">BOO! Gotcha! 👻 Happy Halloween, Bharwa!</p>
+
+    <!-- Haunted Popup -->
+    <div id="popup" class="popup">
+        <p>👻 This Halloween, I wanted to send you a spooky surprise! Happy haunting and enjoy your treats, Bharwa! 🎃</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        function showMessage(index) {
+            let messages = document.querySelectorAll('.surprise-message');
+            messages.forEach((msg, i) => {
+                msg.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
